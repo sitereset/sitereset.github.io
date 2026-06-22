@@ -227,21 +227,40 @@ footer{
   font-size:13px;color:rgba(255,255,255,.25);
 }
 
+/* PATHS SECTION */
+.paths-section{padding:80px 48px;background:#fff}
+/* PATHS GRID */
+.paths-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
 /* MOBILE */
 @media(max-width:900px){
   nav{padding:0 20px}
-  h1{font-size:clamp(52px,12vw,80px)}
-  .trust{padding:28px 16px}
+  h1{font-size:clamp(48px,11vw,72px)}
+  .hero{padding:90px 20px 70px}
+  .hero-sub{font-size:16px}
+  .hero-btn{padding:16px 28px;font-size:15px;width:100%;justify-content:center}
+  .trust{padding:24px 16px}
   .trust-inner{gap:0}
-  .t-item{padding:0 12px}
-  .section{padding:64px 20px}
-  .pain-grid{grid-template-columns:1fr;gap:16px}
-  .audit-bg{padding:64px 20px}
-  .audit-grid{grid-template-columns:1fr}
+  .t-item{padding:0 10px}
+  .t-num{font-size:32px}
+  .t-label{font-size:11px}
+  .paths-section{padding:48px 20px}
+  .paths-grid{grid-template-columns:1fr;gap:16px}
+  /* SECTIONS */
+  .section{padding:56px 20px}
+  .pain-grid{grid-template-columns:1fr;gap:14px}
+  .audit-bg{padding:56px 20px}
+  .audit-grid{grid-template-columns:1fr;gap:12px}
+  .audit-card{padding:20px}
+  /* STEPS */
+  [style*="padding:0 48px"]{padding:0 20px !important}
   .steps-wrap{grid-template-columns:1fr;gap:2px}
-  .bottom{padding:80px 20px}
+  .step{padding:32px 24px}
+  .step-big{font-size:64px}
+  /* BOTTOM */
+  .bottom{padding:72px 20px}
+  .bottom h2{font-size:clamp(36px,9vw,56px)}
   footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px}
-  .hero-btn{padding:18px 36px;font-size:16px}
 }
 </style>
 </head>
@@ -250,7 +269,7 @@ footer{
 <!-- NAV -->
 <nav id="nav">
   <div class="logo">Site<em>Reset</em></div>
-  <a href="https://t.me/SiteResetBot" target="_blank" class="nav-cta">
+  <a href="https://t.me/SiteResetBot?start=audit" target="_blank" class="nav-cta">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
     Получить аудит
   </a>
@@ -278,7 +297,7 @@ footer{
       Пришлите ссылку в Telegram-бот — и получите <strong>подробный разбор</strong>
       вашего сайта по 6 параметрам. Бесплатно, без звонков и менеджеров.
     </p>
-    <a href="https://t.me/SiteResetBot" target="_blank" class="hero-btn">
+    <a href="https://t.me/SiteResetBot?start=audit" target="_blank" class="hero-btn">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
       Получить бесплатный аудит
     </a>
@@ -301,11 +320,11 @@ footer{
 </div>
 
 <!-- TWO PATHS -->
-<div style="padding:80px 48px;background:#fff">
+<div class="paths-section">
   <div style="max-width:1140px;margin:0 auto">
     <div class="reveal eyebrow" style="text-align:center">Чем мы можем помочь</div>
     <div class="reveal sec-title" style="text-align:center;margin-bottom:40px">Неважно с чего<br>вы начинаете</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="paths-grid">
 
       <div class="reveal reveal-delay-1" style="background:var(--bg2);border:2px solid var(--border);border-radius:16px;padding:44px 40px;transition:border-color .3s,transform .3s,box-shadow .3s" onmouseenter="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 48px rgba(13,27,46,.1)'" onmouseleave="this.style.borderColor='var(--border)';this.style.transform='none';this.style.boxShadow='none'">
         <div style="font-size:40px;margin-bottom:20px">🔍</div>
@@ -316,7 +335,7 @@ footer{
           <li style="font-size:14px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-size:16px">✓</span>Конкретный список проблем</li>
           <li style="font-size:14px;color:var(--muted);padding:6px 0;display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-size:16px">✓</span>Редизайн от 15 000 ₽ за 3 дня</li>
         </ul>
-        <a href="https://t.me/SiteResetBot" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--tg);color:#fff;text-decoration:none;padding:14px 28px;border-radius:7px;font-size:15px;font-weight:600">
+        <a href="https://t.me/SiteResetBot?start=audit" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--tg);color:#fff;text-decoration:none;padding:14px 28px;border-radius:7px;font-size:15px;font-weight:600">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
           Получить аудит
         </a>
@@ -331,7 +350,7 @@ footer{
           <li style="font-size:14px;color:rgba(255,255,255,.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-size:16px">✓</span>Лендинг от 15 000 ₽</li>
           <li style="font-size:14px;color:rgba(255,255,255,.5);padding:6px 0;display:flex;gap:10px;align-items:center"><span style="color:var(--gold);font-size:16px">✓</span>Готовый сайт за 3 дня</li>
         </ul>
-        <a href="https://t.me/SiteResetBot" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;text-decoration:none;padding:14px 28px;border-radius:7px;font-size:15px;font-weight:600">
+        <a href="https://t.me/SiteResetBot?start=new" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;text-decoration:none;padding:14px 28px;border-radius:7px;font-size:15px;font-weight:600">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
           Получить предложение
         </a>
@@ -429,7 +448,7 @@ footer{
     Узнайте что мешает<br>вашему сайту <em>продавать</em>
   </h2>
   <p class="reveal">Бесплатно. Без звонков. Результат прямо в Telegram.</p>
-  <a href="https://t.me/SiteResetBot" target="_blank" class="hero-btn reveal" style="animation:none;opacity:1;transform:none">
+  <a href="https://t.me/SiteResetBot?start=audit" target="_blank" class="hero-btn reveal" style="animation:none;opacity:1;transform:none">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
     Открыть @SiteResetBot
   </a>
