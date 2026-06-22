@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiteReset — Бесплатный аудит сайта за 24 часа</title>
+<meta name="description" content="Пришлите ссылку на сайт — получите подробный разбор за 24 часа. Бесплатно.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0f1f3d;
+  --navy2:#1a3260;
+  --gold:#C9A84C;
+  --gold-l:#e8c96a;
+  --bg:#ffffff;
+  --bg2:#f7f8fa;
+  --bg3:#eef0f5;
+  --text:#0f1f3d;
+  --muted:#6b7a99;
+  --border:#e2e6ef;
+  --tg:#229ED9;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 48px;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:3px;color:var(--navy)}
+.logo em{color:var(--gold);font-style:normal}
+.nav-btn{
+  background:var(--tg);color:#fff;border:none;
+  padding:10px 24px;font-family:'Inter',sans-serif;font-size:14px;font-weight:500;
+  cursor:pointer;border-radius:6px;text-decoration:none;
+  display:flex;align-items:center;gap:8px;transition:opacity .2s;
+}
+.nav-btn:hover{opacity:.88}
+.nav-btn svg{width:18px;height:18px;flex-shrink:0}
+
+/* HERO */
+.hero{
+  padding:140px 48px 100px;
+  background:linear-gradient(160deg, #f7f8fa 0%, #ffffff 60%);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'RESET';
+  position:absolute;right:-60px;top:50%;transform:translateY(-50%);
+  font-family:'Bebas Neue',sans-serif;font-size:280px;letter-spacing:-4px;
+  color:rgba(15,31,61,0.035);pointer-events:none;line-height:1;
+}
+.hero-inner{max-width:900px;margin:0 auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.3);
+  color:var(--gold);padding:6px 16px;border-radius:100px;
+  font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;
+}
+.eyebrow-dot{width:6px;height:6px;background:var(--gold);border-radius:50%}
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,7vw,96px);
+  line-height:.95;letter-spacing:.5px;
+  color:var(--navy);margin-bottom:28px;
+}
+h1 .accent{color:var(--gold)}
+.hero-sub{
+  font-size:18px;color:var(--muted);line-height:1.7;
+  max-width:560px;margin:0 auto 48px;
+}
+.hero-sub strong{color:var(--navy);font-weight:500}
+
+.tg-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--tg);color:#fff;text-decoration:none;
+  padding:20px 48px;border-radius:8px;
+  font-size:18px;font-weight:600;
+  transition:transform .15s, box-shadow .15s;
+  box-shadow:0 8px 32px rgba(34,158,217,0.3);
+}
+.tg-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(34,158,217,0.4)}
+.tg-btn svg{width:24px;height:24px;flex-shrink:0}
+.hero-note{margin-top:16px;font-size:13px;color:var(--muted)}
+.hero-note strong{color:var(--navy)}
+
+/* TRUST */
+.trust{
+  background:var(--navy);padding:36px 48px;
+  display:flex;justify-content:center;gap:0;
+}
+.t-item{
+  text-align:center;padding:0 56px;
+  border-right:1px solid rgba(255,255,255,0.1);
+}
+.t-item:last-child{border-right:none}
+.t-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold);line-height:1}
+.t-label{font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px}
+
+/* SECTIONS */
+.section{padding:90px 48px;max-width:1100px;margin:0 auto}
+.sec-eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:16px}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,3.5vw,58px);line-height:.97;color:var(--navy);margin-bottom:52px}
+
+/* PAIN */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pain-card{
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:10px;padding:32px 28px;
+  border-top:3px solid var(--gold);
+}
+.pain-icon{font-size:28px;margin-bottom:16px}
+.pain-h{font-size:17px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.pain-p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* AUDIT LIST */
+.audit-bg{background:var(--bg2);padding:90px 48px}
+.audit-inner{max-width:1100px;margin:0 auto}
+.audit-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.audit-item{
+  background:#fff;border:1px solid var(--border);
+  border-radius:10px;padding:28px;
+  display:flex;gap:20px;align-items:flex-start;
+}
+.a-num{
+  min-width:36px;height:36px;background:var(--navy);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  border-radius:6px;font-family:'Bebas Neue',sans-serif;font-size:18px;flex-shrink:0;
+}
+.a-title{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:5px}
+.a-desc{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.steps::before{
+  content:'';position:absolute;top:28px;left:16.67%;right:16.67%;
+  height:1.5px;background:var(--border);z-index:0;
+}
+.step{text-align:center;padding:0 32px;position:relative;z-index:1}
+.step-circle{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--navy);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Bebas Neue',sans-serif;font-size:26px;
+  margin:0 auto 24px;position:relative;
+  box-shadow:0 0 0 6px #fff, 0 0 0 7px var(--border);
+}
+.step-h{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.step-p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* BOTTOM CTA */
+.bottom-cta{
+  background:var(--navy);padding:100px 48px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.bottom-cta::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:300px;
+  background:radial-gradient(ellipse,rgba(201,168,76,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.bottom-cta h2{
+  font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);
+  line-height:.97;color:#fff;margin-bottom:20px;
+}
+.bottom-cta h2 em{color:var(--gold);font-style:normal}
+.bottom-cta p{font-size:17px;color:rgba(255,255,255,0.55);margin-bottom:44px}
+
+/* HOW BOT WORKS */
+.bot-flow{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;flex-wrap:wrap;margin-top:56px;
+}
+.bot-step{
+  background:#fff;border:1px solid var(--border);
+  border-radius:10px;padding:20px 24px;text-align:center;
+  min-width:160px;max-width:190px;
+}
+.bot-icon{font-size:28px;margin-bottom:8px}
+.bot-label{font-size:13px;font-weight:500;color:var(--navy)}
+.bot-arrow{font-size:20px;color:var(--border);padding:0 12px;flex-shrink:0}
+
+/* FOOTER */
+footer{
+  background:var(--bg2);padding:32px 48px;
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:14px 20px}
+  .hero{padding:100px 20px 70px}
+  .hero::before{display:none}
+  .trust{gap:0;padding:28px 12px;overflow-x:auto}
+  .t-item{padding:0 28px;white-space:nowrap}
+  .section{padding:60px 20px}
+  .pain-grid{grid-template-columns:1fr}
+  .audit-bg{padding:60px 20px}
+  .audit-grid{grid-template-columns:1fr}
+  .steps::before{display:none}
+  .steps{grid-template-columns:1fr;gap:32px}
+  .step-circle{margin-bottom:16px}
+  .bottom-cta{padding:70px 20px}
+  .bot-flow{gap:8px}
+  .bot-arrow{padding:0 4px}
+  footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px}
+  .tg-btn{padding:18px 32px;font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Site<em>Reset</em></div>
+  <a href="https://t.me/SiteResetBot" target="_blank" class="nav-btn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+    Получить аудит
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Бесплатно · Результат за 24 часа
+    </div>
+    <h1>
+      Ваш сайт<br>
+      не приносит<br>
+      <span class="accent">клиентов?</span>
+    </h1>
+    <p class="hero-sub">
+      Пришлите ссылку в Telegram-бот — и получите <strong>подробный разбор</strong>
+      вашего сайта по 6 параметрам. Бесплатно, без звонков и менеджеров.
+    </p>
+    <a href="https://t.me/SiteResetBot" target="_blank" class="tg-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+      Получить бесплатный аудит
+    </a>
+    <div class="hero-note">Напишите боту — он попросит ссылку и всё сделает сам. <strong>0 ₽</strong></div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="t-item"><div class="t-num">24ч</div><div class="t-label">Время ответа</div></div>
+  <div class="t-item"><div class="t-num">0 ₽</div><div class="t-label">Стоимость аудита</div></div>
+  <div class="t-item"><div class="t-num">6</div><div class="t-label">Параметров проверки</div></div>
+  <div class="t-item"><div class="t-num">3 дня</div><div class="t-label">Срок редизайна</div></div>
+</div>
+
+<!-- PAIN -->
+<div class="section">
+  <div class="sec-eyebrow">Узнаёте себя?</div>
+  <div class="sec-title">Когда сайт<br>работает против вас</div>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-icon">📉</div>
+      <div class="pain-h">Заходят — но не звонят</div>
+      <p class="pain-p">Трафик есть, а заявок нет. Конкуренты с похожим предложением получают клиентов — и непонятно почему.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">📱</div>
+      <div class="pain-h">На телефоне всё разъехалось</div>
+      <p class="pain-p">Больше половины клиентов заходят с мобильного. Если сайт неудобен — они уходят к следующему за 3 секунды.</p>
+    </div>
+    <div class="pain-card">
+      <div class="pain-icon">😬</div>
+      <div class="pain-h">Стыдно давать ссылку</div>
+      <p class="pain-p">Клиент спрашивает сайт — вы мешкаете. Потому что он не отражает реальный уровень вашей работы.</p>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIT ITEMS -->
+<div class="audit-bg">
+  <div class="audit-inner">
+    <div class="sec-eyebrow">Что проверяем</div>
+    <div class="sec-title">6 параметров<br>которые разбирает бот</div>
+    <div class="audit-grid">
+      <div class="audit-item">
+        <div class="a-num">01</div>
+        <div>
+          <div class="a-title">Мобильная версия</div>
+          <div class="a-desc">Как сайт выглядит на iPhone и Android — что сломано или неудобно</div>
+        </div>
+      </div>
+      <div class="audit-item">
+        <div class="a-num">02</div>
+        <div>
+          <div class="a-title">Скорость загрузки</div>
+          <div class="a-desc">Реальный балл Google PageSpeed и что именно тормозит сайт</div>
+        </div>
+      </div>
+      <div class="audit-item">
+        <div class="a-num">03</div>
+        <div>
+          <div class="a-title">Главный экран</div>
+          <div class="a-desc">Понятно ли за 5 секунд чем вы занимаетесь и почему клиент должен остаться</div>
+        </div>
+      </div>
+      <div class="audit-item">
+        <div class="a-num">04</div>
+        <div>
+          <div class="a-title">Кнопки и формы</div>
+          <div class="a-desc">Легко ли оставить заявку, позвонить, написать — или клиент теряется</div>
+        </div>
+      </div>
+      <div class="audit-item">
+        <div class="a-num">05</div>
+        <div>
+          <div class="a-title">Доверие и соцдоказательства</div>
+          <div class="a-desc">Отзывы, примеры работ, цифры — то что превращает посетителя в клиента</div>
+        </div>
+      </div>
+      <div class="audit-item">
+        <div class="a-num">06</div>
+        <div>
+          <div class="a-title">Итог + рекомендация</div>
+          <div class="a-desc">Топ-3 проблемы и честная оценка — стоит ли переделывать и что это даст</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section" style="max-width:1100px">
+  <div class="sec-eyebrow">Как это работает</div>
+  <div class="sec-title">Три шага<br>и готово</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-circle">1</div>
+      <div class="step-h">Открываете бот</div>
+      <p class="step-p">Нажимаете кнопку ниже — попадаете в Telegram-бот @SiteResetBot. Регистрация не нужна.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <div class="step-h">Присылаете ссылку</div>
+      <p class="step-p">Бот попросит ссылку на ваш сайт. Просто скопируйте и отправьте — всё остальное он сделает сам.</p>
+    </div>
+    <div class="step">
+      <div class="step-circle">3</div>
+      <div class="step-h">Получаете разбор</div>
+      <p class="step-p">Через несколько минут — подробный аудит по 6 параметрам и конкретный список что исправить.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <h2>
+    Узнайте что<br>
+    <em>мешает вашему сайту</em><br>
+    продавать
+  </h2>
+  <p>Бесплатно. Без звонков. Результат прямо в Telegram.</p>
+  <a href="https://t.me/SiteResetBot" target="_blank" class="tg-btn" style="font-size:19px;padding:22px 56px">
+    <svg viewBox="0 0 24 24" fill="currentColor" style="width:26px;height:26px"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+    Открыть @SiteResetBot
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Site<em style="color:var(--gold);font-style:normal">Reset</em></div>
+  <div>sitereset.github.io</div>
+  <div>© 2025 SiteReset</div>
+</footer>
+
+</body>
+</html>
